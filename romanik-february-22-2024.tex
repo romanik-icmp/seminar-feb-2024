@@ -480,17 +480,50 @@
 		\textbf{Hierarchy of total correlation functions:}
 		\hfill{} \break
 		
+		$n=1:$
+		\begin{equation*}
+			h^{(1)}(\vb{r}) = g^{(1)}(\vb{r}) = 1.
+		\end{equation*}
+		
 		$n=2$ - pair (radial) correlation function
 		\begin{equation*}
 			\label{def:pair_corr_func}
 			h^{(2)}(\vb{r}_1,\vb{r}_2) = g^{(2)}(\vb{r}_1,\vb{r}_2) - 1
 		\end{equation*}
 		
-		$n=3$
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Total correlation functions}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		
+		$n=3:$
 		\begin{eqnarray*}
 			h^{(3)}(\vb{r}_1 ,\vb{r}_2, \vb{r}_3) &=& g^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_3) - g^{(2)}(\vb{r}_1, \vb{r}_2) 
 			\nonumber\\
 			&&-g^{(2)}(\vb{r}_1,\vb{r}_3) -  g^{(2)}(\vb{r}_2,\vb{r}_3) +2.
+		\end{eqnarray*}
+		
+		$n=4:$
+		\begin{eqnarray*}
+			h^{(4)}(1,2,3,4) &=& g^{(4)}(1,2,3,4) 
+			- \sum_{\vb l = \left\{\substack{1,2,3,4 \\ 1,2,4,3 \\ 1,3,4,2 \\ 2,3,4,1}\right\} }g^{(3)}(l_1,l_2,l_3) g^{(1)}(l_4) 
+			\nonumber\\
+			&&-\sum_{\vb l = \left\{ \substack{1,2,3,4 \\ 1,3,2,4 \\ 1,4,2,3} \right\}}g^{(2)}(l_1,l_2) g^{(2)}(l_3,l_4)
+			\nonumber\\
+			&& + 2\sum_{\vb l = \left\{\substack{1,2,3,4 \\ 1,3,2,4 \\ 1,4,2,3 \\ 2,3,1,4 \\ 2,4,1,3 \\ 3,4,1,2} \right\}} g^{(2)}(l_1,l_2)g^{(1)}(l_3) g^{(1)}(l_4) 
+			\nonumber\\
+			&&-6g^{(1)}(1) g^{(1)}(2)g^{(1)}(3) g^{(1)}(4).
 		\end{eqnarray*}
 		
 		%	\column{0.1\textwidth}
