@@ -5,13 +5,13 @@
     \setbeamercovered{transparent}
   }
 \usefonttheme[]{serif}
-%\usepackage[english,ukrainian]{babel}
-\usepackage[english]{babel}
+\usepackage[english,ukrainian]{babel}
+%\usepackage[english]{babel}
 \usepackage[OT1,T2A]{fontenc}
 \usepackage[cp1251]{inputenc} % кодування документа; замість cp866nav.
 \usepackage{amsfonts}
 \usepackage{times}
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage{physics}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -463,8 +463,232 @@
 		
 		%\begin{columns}
 		%	\column{0.9\textwidth}
-
+		-- $n$-particle distribution funciton
+		\begin{equation*}
+			\label{def:g_n}
+			g^{(n)}(\vb{r}^n)=\frac{\rho^{(n)}(\vb{r}_1,\dotsc,\vb{r}_n)}{\prod_{i=1}^{n}\rho^{(1)}(\vb{r}_i)}
+		\end{equation*}
 		
+		-- $n$-particle density
+		\begin{eqnarray*}
+			\label{def:rho_n}
+			\rho^{(n)}(\vb r^n) = \frac{1}{\Xi}\sum_{N=n}^{\infty} \frac{z^N}{(N-n)!} \int\exp(-\beta U_N) d\vb r^{(N-n)}
+		\end{eqnarray*}
+		
+		\textbf{Hierarchy of total correlation functions:}
+		\hfill{} \break
+		
+		$n=2$ - pair (radial) correlation function
+		\begin{equation*}
+			\label{def:pair_corr_func}
+			h^{(2)}(\vb{r}_1,\vb{r}_2) = g^{(2)}(\vb{r}_1,\vb{r}_2) - 1
+		\end{equation*}
+		
+		$n=3$
+		\begin{eqnarray*}
+			h^{(3)}(\vb{r}_1 ,\vb{r}_2, \vb{r}_3) &=& g^{(3)}(\vb{r}_1, \vb{r}_2, \vb{r}_3) - g^{(2)}(\vb{r}_1, \vb{r}_2) 
+			\nonumber\\
+			&&-g^{(2)}(\vb{r}_1,\vb{r}_3) -  g^{(2)}(\vb{r}_2,\vb{r}_3) +2.
+		\end{eqnarray*}
+		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fourier transforms for Total correlation functions}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		-- Fourier transformation
+		\begin{eqnarray}
+			&&\hat{h}^{(n)}(\vb{k}_1,\dotsc, \vb{k}_n) 
+			\\
+			&&= \int \exp(-{\rm i}\vb{k}_1\vb{r}_1 - \dotsc - {\rm i}\vb{k}_n\vb{r}_n) h^{(n)}(\vb{r}_1, \dotsc, \vb{r}_n) d\vb{r}_1\dotsc d\vb{r}_n
+			\nonumber
+		\end{eqnarray}
+		
+		
+		-- The following property holds for total correlation functions
+		\begin{equation*}
+			\frac{1}{V}\hat{h}^{(n)} (\vb{k}^n) = \hat{h}^{(n)} (\vb{k}_1, \dotsc, \vb{k}_{n-1}) 
+			\delta_{\vb{k}_1+\dotsc + \vb{k}_n}
+		\end{equation*}
+		
+		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Recurrence relations for Total correlation functions}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		-- Recurrence relations
+		
+		\begin{eqnarray*}
+			\label{recur_g}
+			&&\frac{\partial (\rho^n g^{(n)})}{\partial\rho} \bigg|_T 
+			= 
+			\\
+			&& = \frac{n\rho^{n-1}g^{(n)} + \rho^n \int \{g^{(n+1)}(\vb r_1, \dots, \vb r_{n+1}) - g^{(n)}(\vb r_1, \dots, \vb r_n)\} {\rm d} \vb r_{n+1}}
+			{1 + \rho\int \{g^2(\vb r_1, \vb r_2) - 1\} {\rm d} \vb r_1}
+			\nonumber
+		\end{eqnarray*}
+		
+		-- Explicit relationship for $\hat{h}^{(3)}$ via $\hat{h}^{(2)}$:
+		\begin{equation*}
+			\label{recur_h3_h2}
+			\hat{h}^{(3)}(k, -k) = 2 \hat{h}^{(2)}(0)\hat{h}^{(2)}(k) + \frac{\partial \hat{h}^{(2)}(k)}{\partial\rho}(1 + \rho\hat{h}^{(2)}(0)).
+		\end{equation*}
+		
+		-- Explicity relationship for $\hat{h}^{(4)}$ via $\hat{h}^{(3)}$:
+		\begin{eqnarray*}
+			\label{recur_h4_h3}
+			\hat{h}^{(4)}(\vb k_1, \vb k_2, 0) &=& 3\hat{h}^{(2)}(0)\hat{h}^{(3)}(\vb k_1, \vb k_2) 
+			\nonumber\\
+			&+& \frac{\partial \hat{h}^{(3)}(\vb k_1, \vb k_2)} {\partial \rho} (1 + \rho\hat{h}^{(2)}(0))
+		\end{eqnarray*}
+		
+		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Recurrence relations for cumulants}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		
+		-- Explicit relationship for $\mathfrak{m}_{3}$ via $\mathfrak{m}_{2}$:
+		\begin{equation*}
+			\label{recur_m3_m2}
+			\mathfrak{m}_3(\vb k, -\vb k) = \mathfrak{m}_2(0) 
+			\left[
+			\mathfrak{m}_2(\vb k) + \eta\frac{\partial\mathfrak{m}_2(\vb k)}{\partial\eta}
+			\right],
+		\end{equation*}
+		
+		
+		-- Explicity relationship for $\mathfrak{m}_{4}$ via $\mathfrak{m}_{3}$:
+				
+		\begin{eqnarray*}
+			\label{recur_m4_m2}
+			\mathfrak{m}_4(k, -k, 0) &=& \mathfrak{m}_2(0) 
+			\left[
+			\mathfrak{m}_2(k)\mathfrak{m}_2(0) + 3\eta\mathfrak{m}_2(0)\frac{\partial\mathfrak{m}_2(k)}{\partial\eta}
+			\right.
+			\nonumber\\
+			&& \left. 
+			+ \eta\mathfrak{m}_2(k)\frac{\partial\mathfrak{m}_2(0)}{\partial\eta} 
+			+ \eta^2\frac{\partial\mathfrak{m}_2(0)}{\partial\eta} \frac{\partial\mathfrak{m}_2(k)}{\partial\eta}
+			\right.
+			\nonumber\\
+			&& \left.
+			+ \eta^2\mathfrak{m}_2(0)\frac{\partial^2\mathfrak{m}_2(k)}{\partial\eta^2}
+			\right]
+		\end{eqnarray*}
+		
+		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Cumulants for the hard-sphere system}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		
+		-- Given the equation of state for the hard-sphere system in the form:
+		\begin{equation*}
+			\frac{PV}{NkT} = f(\eta)
+		\end{equation*}
+		
+		
+		-- Second cumulant $\mathfrak{m}_{2}$ is found as:
+		
+		\begin{equation*}
+			\frac{1}{\mathfrak{m}_2} = f(\eta) + \eta \frac{\partial f(\eta)}{\partial \eta}.
+		\end{equation*}
+		
+		-- In Carnahan-Starling approximation:
+		\begin{equation*}
+			\mathfrak{m}_2 = \frac{(1-\eta)^4}{(1+2\eta)^2 - 4\eta^3 + \eta^4},
+			\nonumber
+		\end{equation*}
+		
+		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+	
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Functional form for Grand partition function}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		
+		\begin{eqnarray*}
+			\label{gpf_1}
+			&&\Xi = \Xi_0 \int \exp \left[h \rho_0 - \frac12
+			\sum\limits_{\bf k} \alpha (k) \rho_{\bf k}\rho_{-{\bf k}} \right]
+			\\
+			&&
+			\quad{}\times
+			\exp \left(i2\pi \sum\limits_{\bf k} \omega_{\bf k} \rho_{\bf k} \right.
+			\nonumber\\
+			&& \quad{} + \left. \sum_{n\ge 1} \frac{(-i2\pi)^n}{n!}\sum_{\vb{k}_1,\dotsc,\vb{k}_n} {\mathfrak M}_n(\vb{k}_1,\dotsc,\vb{k}_n) \omega_{\vb k_1}\dotsc\omega_{\vb{k}_n} \right) 
+			\nonumber\\
+			&&
+			\quad{}\times ({\rm d}\omega) ({\rm d}\rho) 
+			\nonumber
+		\end{eqnarray*}
+		
+		\hfill
+		
+		{\it Approximation 1.} The expression for $\Xi$ is restricted to $\mathfrak{M}_4$
+		
+		\hfill
+		
+		{\it Approximation 2.} The dependence of cumulants $\mathfrak{M}_n$ on the wave vectors $\vb k_i$ is neglected, except for the dependence via $\delta$-functions
+		\begin{equation*}
+			\mathfrak{M}_n({\vb k}^n) \approx \mathfrak{M}_n(0^n) \delta_{\vb{k}_1 + \dotsc + \vb{k}_n}
+		\end{equation*}
 		
 		
 		%	\column{0.1\textwidth}
