@@ -550,7 +550,7 @@
 			%\parbox{0.1\textwidth}{\caption*{}}
 		\end{figure}
 		
-		%\hfill
+		\hfill
 		
 		J.A.~Hernando, Exact and approximate expressions for the three-particle direct correlation function and some related functions, Phys. Rev. A, 33, (1986); doi: 10.1103/PhysRevA.33.1338
 		
@@ -751,8 +751,23 @@
 			\nonumber
 		\end{eqnarray*}
 		
-		\hfill
 		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Functional form for Grand partition function}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+				
 		{\it Approximation 1.} The expression for $\Xi$ is restricted to $\mathfrak{M}_4$
 		
 		\hfill
@@ -760,6 +775,54 @@
 		{\it Approximation 2.} The dependence of cumulants $\mathfrak{M}_n$ on the wave vectors $\vb k_i$ is neglected, except for the dependence via $\delta$-functions
 		\begin{equation*}
 			\mathfrak{M}_n({\vb k}^n) \approx \mathfrak{M}_n(0^n) \delta_{\vb{k}_1 + \dotsc + \vb{k}_n}
+		\end{equation*}
+		
+		\hfill
+		
+		{\it{Approximation 3.}} Integration over $\rho_{\vb k}$ with $k > B$ is carried out with Gaussian measure, $B$ being a cutoff parameter, e.g. following from condition $\hat{\Phi}_B = 0$.
+		
+		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Functional form for Grand partition function}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		
+		\begin{equation*}
+			\label{Xi_as_prod}
+			\Xi = \Xi_0\Xi_G\Xi_L
+		\end{equation*}
+		
+		\begin{eqnarray*}
+			\label{Xi_L_1}
+			\Xi_L & \propto & 
+			\int \exp\left(
+			\mu^* \rho_0 - \frac{1}{2} \sum_{\substack{\vb k \\ k \leq B}} d(k) \rho_{\vb k} \rho_{-\vb k} 
+			\right.\\
+			&& -\left. \frac{a_4}{4! N_B} \sum_{\substack{\vb k_1, \dotsc, \vb k_4 \\ k_i \leq B}} \rho_{\vb k_1} \dotsc \rho_{\vb k_4} \delta_{\vb{k}_1 + \dotsc + \vb{k}_4} \right) ({\rm d} \rho)^{N_B}
+			\nonumber
+		\end{eqnarray*}
+		
+		Notation:
+		\begin{equation*}
+			d(k) = a_2 + \alpha(k),
+		\end{equation*}
+		\begin{equation*}
+			 \mu^* = \beta(\mu - \mu_0) + \frac{\mathfrak{m}_3}{\mathfrak{m_4}} + 
+			 \frac{\langle N \rangle_0}{V}\beta\hat{\Phi}_0 
+			 \left(
+			 	1 + \frac{\mathfrak{m}_2 \mathfrak{m}_3}{\mathfrak{m}_4} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}
+			 \right)
 		\end{equation*}
 		
 		
@@ -771,5 +834,215 @@
 	
 \end{frame}
 
+\begin{frame}
+	\frametitle{Coefficients of the effective hamiltonian}
+	
+	\begin{spacing}{1}
+		
+		%\begin{columns}
+		%	\column{0.9\textwidth}
+		\begin{figure}[htbp]
+			\includegraphics[width=0.45\textwidth,angle=0]{a2_as_function_of_eta} \hfill
+			\includegraphics[width=0.45\textwidth,angle=0]{a2_as_function_of_eta} \\
+			\parbox{0.5\textwidth}{\caption*{}} \hfill
+			\parbox{0.45\textwidth}{\caption*{}}
+		\end{figure}
+		
+		
+		
+		%	\column{0.1\textwidth}
+		
+		
+		%\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Critical point in mean-field approximation}
+	
+	\begin{spacing}{1}
+		
+		\begin{columns}
+			\column{0.9\textwidth}
+		
+		\begin{equation*}
+			\Xi_L^{(1)} = \int \exp(\mu^*\rho_0 -\frac{d(0)}{2} \rho_0^2 - \frac{a_4}{4!N_B} \rho_0^4) {\rm d} \rho_0.
+		\end{equation*}
+		
+		Since $d(0) \propto \langle N \rangle_0$ and $a_4 \propto \langle N \rangle_0^2$, perform substitution of variables 
+		$\rho = \langle N \rangle_0 \rho_0'$
+		
+		
+		\begin{equation*}
+			\Xi_L^{(1)} = \langle N \rangle_0 \int \exp[\langle N \rangle_0 E(\rho'_0)] {\rm d} \rho'_0
+		\end{equation*}
+		
+		\hfill
+		
+		\begin{equation*}
+			E(\rho'_0) = \mu^*\rho_0' - \frac{d'(0)}{2} {\rho'}_0^2 - \frac{a'_4}{4!}{\rho'}_0^4,
+		\end{equation*}
+		\begin{equation*}
+			d'(0) = \langle N \rangle_0 d(0) = a'_2 + \frac{6}{\pi}\eta \frac{\varepsilon}{k_BT} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3}.
+		\end{equation*}
+		\begin{equation*}
+			a'_2 = \langle N \rangle_0 a_2, \quad a'_4 = \frac{\langle N \rangle_0}{N_B} \langle N \rangle_0^2 a_4
+		\end{equation*}
+		
+		
+		
+			\column{0.1\textwidth}
+		
+		
+		\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Critical point in mean-field approximation}
+	
+	\begin{spacing}{1}
+		
+		\begin{columns}
+			\column{0.9\textwidth}
+			
+			-- Applying the steepest-descent method
+			
+			\begin{equation*}
+				\label{mf:Xi_L_1}
+				\Xi_L^{(1)} = \langle N \rangle_0 \exp(\langle N \rangle_0 E(\rho_{0,{\rm max}}))
+			\end{equation*}
+			
+			-- where $\rho_{0, {\rm max}}$ maximizes $E(\rho_0)$
+			\begin{equation*}
+				\frac{\partial E}{\partial \rho'_0} = 0; \quad \frac{\partial^2 E}{\partial {\rho'}_0^2} < 0.
+			\end{equation*}
+			
+			-- in explicit form
+			\begin{equation*}
+				\label{eq_rho_mean_field}
+				\mu^*-d'(0)\rho_0 - \frac{a'_4}{3!}{\rho'}_0^3 = 0,
+			\end{equation*}
+			\begin{equation*}
+				-d'(0) - \frac{a'_4}{2}{\rho'}_0^2 < 0.
+			\end{equation*}
+			
+			-- Conditions for critical point to exist
+			\begin{equation*}
+				\mu^* = 0
+			\end{equation*}
+			
+			\column{0.1\textwidth}
+			
+			
+		\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Critical point in mean-field approximation}
+	
+	\begin{spacing}{1}
+		
+		\begin{columns}
+			\column{0.5\textwidth}
+			
+			-- Solutions for $\rho_{\rm max}$ at $\mu^* = 0$
+			$$
+			\rho_{01, {\rm max}} = 0; \quad \rho_{02,03, {\rm max}} = \pm\sqrt{-\frac{3!d'(0)}{a'_4}}
+			$$ 
+			
+			-- Second condition for critical point to exist
+			\begin{equation*}
+				d(0) = 0
+			\end{equation*}
+			
+			\column{0.5\textwidth}
+			
+			-- Thermodynamic expression for the average number of particles
+			\begin{equation*}
+				\left(\frac{\partial \ln\Xi}{\partial (\beta\mu)}\right)_{T,V} = \langle N \rangle.
+			\end{equation*}
+			
+			-- This gives rise to
+			\begin{equation*}
+				\langle N \rangle_0
+				\left(
+				\mathfrak{m}_1 + \frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}  + \rho_0^{\rm{max}}
+				\right) 
+				= \langle N \rangle.
+			\end{equation*}
+			
+			-- Third condition that we use to get the critical point coordinates
+			\begin{equation*}
+				\langle N \rangle_0 = \langle N \rangle.
+			\end{equation*}
+			
+			-- This leads to
+			\begin{equation*}
+				\rho_0^{\rm{max}} = - \left(\frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}\right) = 0.
+			\end{equation*}
+			
+		\end{columns}
+	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Critical point in mean-field approximation}
+	
+	\begin{spacing}{1}
+		
+		\begin{columns}
+			\column{0.3\textwidth}
+			
+			-- Condition $\mu^* = 0:$
+			
+			\column{0.7\textwidth}
+			
+			\begin{equation*}
+				\beta(\mu - \mu_0) + \frac{\mathfrak{m}_3}{\mathfrak{m_4}} + 
+				\frac{\langle N \rangle_0}{V}\beta\hat{\Phi}_0 
+				\left(
+				1 + \frac{\mathfrak{m}_2 \mathfrak{m}_3}{\mathfrak{m}_4} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}
+				\right) = 0
+			\end{equation*}
+			
+			
+		\end{columns}
+		
+		\begin{columns}
+			\column{0.3\textwidth}
+			
+			-- Condition $d(0) = 0:$
+			
+			\column{0.7\textwidth}
+			
+			\begin{equation*}
+				a'_2 + \frac{6\eta}{\pi} \frac{1}{T^*} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3} = 0
+			\end{equation*}
+			
+			
+		\end{columns}
+		
+		\begin{columns}
+			\column{0.35\textwidth}
+			
+			-- Condition $\langle N \rangle_0 = \langle N \rangle:$
+			
+			\column{0.7\textwidth}
+			
+			\begin{equation*}
+				\left(\frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}\right) = 0.
+			\end{equation*}
+			
+			
+		\end{columns}
+	\end{spacing}
+	
+\end{frame}
 
 \end{document} 
