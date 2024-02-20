@@ -1,36 +1,41 @@
 \documentclass[8pt]{beamer}
-\mode<presentation>
-  {
-    \usetheme{Pittsburgh}
-    \setbeamercovered{transparent}
-  }
+%\mode<presentation>
+  %{
+    %\usetheme{Pittsburgh}
+    %\setbeamercovered{transparent}
+  %}
+
+\usetheme{Madrid}
+%\usetheme{Singapore}
+%\usecolortheme{default}
+%\useinnertheme{circles}
+%\useoutertheme{tree}
 \usefonttheme[]{serif}
+
 \usepackage[english,ukrainian]{babel}
 %\usepackage[english]{babel}
 \usepackage[OT1,T2A]{fontenc}
 \usepackage[cp1251]{inputenc} % кодування документа; замість cp866nav.
 \usepackage{amsfonts}
-\usepackage{times}
+
 \usepackage[T1]{fontenc}
 \usepackage{physics}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-%\usepackage[pdftex]{graphicx}
 \usepackage{textcomp}
 \usepackage{mathtext}
 \usepackage{setspace}
-\usepackage{lmodern}
-\usepackage{caption}
+
+\usepackage{caption} % to use \caption* to skip Figure word
 
 \usepackage{epsf}
 \usepackage{amsbsy}
-%\usepackage{graphicx}
 
-\mathchardef\ordinarycolon\mathcode`\:
-\mathcode`\:=\string"8000
-\begingroup \catcode`\:=\active
-  \gdef:{\mathrel{\mathop\ordinarycolon}}
-\endgroup
+%\mathchardef\ordinarycolon\mathcode`\:
+%\mathcode`\:=\string"8000
+%\begingroup \catcode`\:=\active
+%  \gdef:{\mathrel{\mathop\ordinarycolon}}
+%\endgroup
 
 \newcommand{\no}{\nonumber}
 \newcommand{\non}{\nonumber \\}
@@ -65,61 +70,75 @@
 \newcommand{\etamk}{{\eta_{-\vec{k}}}}
 \newcommand{\nuk}{{\nu_{\vec{k}}}}
 
-\setbeamertemplate{frametitle}{\raggedright \insertframetitle \par}
+%\setbeamertemplate{frametitle}{\raggedright \insertframetitle \par}
+
+\title{Grand partition function}
+\subtitle{in collective variables}
+\author{Roman Romanik}
+%\institute{\normalsize Institute for Condensed matter physics, NAS of Ukraine}
+\institute[ICMP]{\small Institute for Condensed matter physics, NAS of Ukraine}
+\date{February 22, 2024}
+
 \begin{document}
-\binoppenalty=10000
-\relpenalty=10000
 
 %-------------------------title------------------
 
 \begin{frame}
-
-\vspace{2cm}
-
-\begin{center}
-    \Large{\textbf{Grand partition function in collective variables}}
-\end{center}
-
-\vspace{2cm}
-
-\begin{center}
-    \textbf{R.V.~Romanik}
-\end{center}
+	\titlepage
+	e-mail: \url{romanik@icmp.lviv.ua}
 \end{frame}
+
+\begin{frame}
+	\frametitle{Outline SP}
+	\tableofcontents
+\end{frame}
+
+%\begin{frame}
+%	\vspace{2cm}
+
+%	\begin{center}
+%	    \Large{\textbf{Grand partition function in collective variables}}
+%	\end{center}
+	
+%	\vspace{2cm}
+	
+%	\begin{center}
+%	    \textbf{R.V.~Romanik}
+%	\end{center}
+%\end{frame}
 
 %--------------------Table of Content----------------------
 
+\section{Problem statement}
+
 \begin{frame}
 	\frametitle{Problem statement. Grand canonical ensemble.}
+	\begin{spacing}{1}
 	
-\begin{spacing}{1}
+		\begin{columns}
+		\column{0.5\textwidth}
 	
-\begin{columns}
-	\column{0.5\textwidth}
-	
-	\begin{equation*}
-		\Xi=\sum_{N=0}^{\infty}\frac{z^N}{N!}Z_N
-	\end{equation*}
-	
-	\begin{equation*}
-		z = \frac{\exp(\beta\mu)}{\Lambda^3}
-	\end{equation*}
-	$\beta = kT$ -- the inverse temperature \\
-	$\mu$ -- the chemical potential \\
-	$\Lambda$ -- the de Broglie thermal wavelength 
-	
-	$Z_N$ -- the configuration integral:
-	\begin{equation*}
-		Z_N = \int\exp(-\beta U_N(\vb {r}^N)){\rm d}\vb{r}^N
-	\end{equation*}
-	
-	$U_N({\vb r}^N)$ -- the potential energy of interparticle interaction
-	
-	\column{0.45\textwidth}
-	
-	
-\end{columns}
-\end{spacing}
+			\begin{equation*}
+				\Xi=\sum_{N=0}^{\infty}\frac{z^N}{N!}Z_N
+			\end{equation*}
+			
+			\begin{equation*}
+				z = \frac{\exp(\beta\mu)}{\Lambda^3}
+			\end{equation*}
+			$\beta = kT$ -- the inverse temperature \\
+			$\mu$ -- the chemical potential \\
+			$\Lambda$ -- the de Broglie thermal wavelength 
+			
+			$Z_N$ -- the configuration integral:
+			\begin{equation*}
+				Z_N = \int\exp(-\beta U_N(\vb {r}^N)){\rm d}\vb{r}^N
+			\end{equation*}
+			
+			$U_N({\vb r}^N)$ -- the potential energy of interparticle interaction
+			
+		\column{0.45\textwidth}
+		\end{columns}
+	\end{spacing}
 	
 \end{frame}
 
@@ -236,6 +255,8 @@
 	
 \end{frame}
 
+\section{Grand partition function in collective variables}
+
 \begin{frame}
 	\frametitle{Grand partition function in collective variables}
 	
@@ -269,6 +290,8 @@
 	
 \end{frame}
 
+\subsection{Calculation of the Jacobian}
+
 \begin{frame}
 	\frametitle{Calculation of the Jacobian}
 	
@@ -298,6 +321,8 @@
 	\end{spacing}
 	
 \end{frame}
+
+\subsection{Cumulants}
 
 \begin{frame}
 	\frametitle{Cumulants}
@@ -382,7 +407,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Some interesting properties of expressions for $\mathfrak{m}_n$}
+	\frametitle{Bell numbers and Stirling numbers of $2^{nd}$ type in $\mathfrak{m}_n$}
 	
 	\begin{spacing}{1}
 		
@@ -417,9 +442,9 @@
 			\begin{figure}[htbp]
 				\includegraphics[width=0.45\textwidth,angle=0]{M2_as_function_of_k_at_different_eta2} \hfill
 				\includegraphics[width=0.45\textwidth,angle=0]{M2_as_function_of_eta_at_k_equals_0} \\
-				\parbox{0.5\textwidth}{\caption{\label{m2_vs_k} Cumulant $\mathfrak{m}_2$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
+				\parbox{0.5\textwidth}{\caption*{\label{m2_vs_k} Fig. Cumulant $\mathfrak{m}_2$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
 				}} \hfill
-				\parbox{0.45\textwidth}{\caption{\label{m2_vs_eta} Cumulant $\mathfrak{m}_2$ as a function of packing fraction $\eta$ at $\vb k = 0$
+				\parbox{0.45\textwidth}{\caption*{\label{m2_vs_eta} Fig. Cumulant $\mathfrak{m}_2$ as a function of packing fraction $\eta$ at $\vb k = 0$
 				}}
 			\end{figure}
 			
@@ -442,9 +467,9 @@
 		\begin{figure}[htbp]
 			\includegraphics[width=0.45\textwidth,angle=0]{M4_as_function_of_k_at_different_eta} \hfill
 			\includegraphics[width=0.45\textwidth,angle=0]{M4_as_function_of_eta_at_k_equals_0} \\
-			\parbox{0.5\textwidth}{\caption{\label{m4_vs_k} Cumulant $\mathfrak{m}_4$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
+			\parbox{0.5\textwidth}{\caption*{\label{m4_vs_k} Fig. Cumulant $\mathfrak{m}_4$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
 			}} \hfill
-			\parbox{0.45\textwidth}{\caption{\label{m4_vs_eta} Cumulant $\mathfrak{m}_4$ as a function of packing fraction $\eta$ at $\vb k = 0$
+			\parbox{0.45\textwidth}{\caption*{\label{m4_vs_eta} Fig. Cumulant $\mathfrak{m}_4$ as a function of packing fraction $\eta$ at $\vb k = 0$
 			}}
 		\end{figure}
 
@@ -458,14 +483,16 @@
 	
 \end{frame}
 
+\subsection{Hierarchy of total correlation functions}
+
 \begin{frame}
 	\frametitle{Total correlation functions}
 	
-	\begin{spacing}{1}
+	%\begin{spacing}{1}
 		
 		%\begin{columns}
 		%	\column{0.9\textwidth}
-		-- $n$-particle distribution funciton
+		-- $n$-particle distribution function
 		\begin{equation*}
 			\label{def:g_n}
 			g^{(n)}(\vb{r}^n)=\frac{\rho^{(n)}(\vb{r}_1,\dotsc,\vb{r}_n)}{\prod_{i=1}^{n}\rho^{(1)}(\vb{r}_i)}
@@ -495,7 +522,7 @@
 		
 		
 		%\end{columns}
-	\end{spacing}
+	%\end{spacing}
 	
 \end{frame}
 
@@ -579,12 +606,12 @@
 		%\begin{columns}
 		%	\column{0.9\textwidth}
 		-- Fourier transformation
-		\begin{eqnarray}
+		\begin{eqnarray*}
 			&&\hat{h}^{(n)}(\vb{k}_1,\dotsc, \vb{k}_n) 
 			\\
 			&&= \int \exp(-{\rm i}\vb{k}_1\vb{r}_1 - \dotsc - {\rm i}\vb{k}_n\vb{r}_n) h^{(n)}(\vb{r}_1, \dotsc, \vb{r}_n) d\vb{r}_1\dotsc d\vb{r}_n
 			\nonumber
-		\end{eqnarray}
+		\end{eqnarray*}
 		
 		
 		-- The following property holds for total correlation functions
@@ -843,7 +870,7 @@
 		%	\column{0.9\textwidth}
 		\begin{figure}[htbp]
 			\includegraphics[width=0.45\textwidth,angle=0]{a2_as_function_of_eta} \hfill
-			\includegraphics[width=0.45\textwidth,angle=0]{a2_as_function_of_eta} \\
+			\includegraphics[width=0.45\textwidth,angle=0]{a4_as_function_of_eta} \\
 			\parbox{0.5\textwidth}{\caption*{}} \hfill
 			\parbox{0.45\textwidth}{\caption*{}}
 		\end{figure}
@@ -857,6 +884,8 @@
 	\end{spacing}
 	
 \end{frame}
+
+\section{Critical point in mean-field approximation}
 
 \begin{frame}
 	\frametitle{Critical point in mean-field approximation}
@@ -1036,12 +1065,101 @@
 			\column{0.7\textwidth}
 			
 			\begin{equation*}
-				\left(\frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}\right) = 0.
+				\frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2} = 0.
 			\end{equation*}
 			
-			
 		\end{columns}
+		
+		\hfill
+		
+		\hrule
+		\begin{columns}
+			
+			\column{0.25\textwidth}
+		
+
+		
+		\begin{equation*}
+			\eta_c = 0.13044 \quad (\rho_c = 0.24913)
+		\end{equation*}
+		\begin{equation*}
+			T^*_c = -\frac{6\eta_c}{\pi a'_2} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3}
+		\end{equation*}
+		\begin{equation*}
+			\beta(\mu_c - \mu_0) = -\frac{\rho^*_c}{T^*_c} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3} = a'_2
+		\end{equation*}
+		
+		\column{0.45\textwidth}
+		\begin{equation*}
+			{\rm{At} \quad R_0/\alpha = 3.5}
+		\end{equation*}
+		
+		\begin{equation*}
+			T^*_c = 2.202
+		\end{equation*}
+		\begin{equation*}
+			\beta(\mu_c - \mu_0) = 2.5453
+		\end{equation*}
+		
+		\end{columns}
+		
+		
 	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Critical point in mean-field approximation}
+	
+	\begin{table}[h]
+		\caption*{Table I. Critical values of temperature and chemical potential for different parameters $R_0/\alpha$.}
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|}
+				%\begin{tabular}{cccccccccc}
+				\hline
+				$R_0/\alpha$ \quad & $T^*_c$ \quad & $\beta(\mu_c - \mu_0)$ \quad & $\beta\mu^{\rm{ex}}_c$ \quad \quad \\
+				\hline
+				2.0  & 9.592 & 2.6699 & 4.0342 \\
+				2.5  & 4.931 & 2.6228 & 3.9872 \\
+				3.0  & 3.111 & 2.5812 & 3.9456 \\
+				3.5  & 2.202 & 2.5453 & 3.9097 \\
+				4.0  & 1.677 & 2.5143 & 3.8787 \\
+				4.5  & 1.342 & 2.4877 & 3.8520 \\
+				5.0  & 1.112 & 2.4645 & 3.8289 \\
+				5.5  & 0.946 & 2.4444 & 3.8088 \\
+				6.0  & 0.821 & 2.4268 & 3.7911 \\
+				\hline
+			\end{tabular}
+		\end{center}
+		\label{tab:critical_chem_potential}
+	\end{table}
+	
+	\begin{columns}
+		\column{0.2\textwidth}
+		$$\mu = \mu^{\rm{id}} + \mu^{\rm{ex}}$$
+		
+		\column{0.8\textwidth}
+	\end{columns}
+	
+	
+\end{frame}
+
+\section{Summary}
+
+\begin{frame}
+	\frametitle{Summary}
+	
+	\begin{itemize}
+		\item Functional form for the grand partition function is obtained with all coefficients explicitly known as functions of density, temperature and chemical potential
+		
+		\hfill
+		
+		\item The hierarchy of total correlation functions is revisited
+		
+		\hfill
+		
+		\item The critical point coordinates are obtained in the mean-field approximation in coordinates 'density -- temperature - chemical potential'
+	\end{itemize}
 	
 \end{frame}
 
