@@ -37,39 +37,6 @@
 %  \gdef:{\mathrel{\mathop\ordinarycolon}}
 %\endgroup
 
-\newcommand{\no}{\nonumber}
-\newcommand{\non}{\nonumber \\}
-\newcommand{\ve}[1]{{\bf #1}}
-\newcommand{\be}{\begin{equation}}
-\newcommand{\ee}{\end{equation}}
-\newcommand{\bea}{\begin{eqnarray}}
-\newcommand{\eea}{\end{eqnarray}}
-\newcommand{\sli}{\sum\limits}
-\newcommand{\ili}{\int\limits}
-%\newcommand{\lp}{\left (}
-%\newcommand{\rp}{\right )}
-%\newcommand{\lb}{\left [}
-%\newcommand{\rb}{\right ]}
-%\newcommand{\lbr}{\left \{}
-%\newcommand{\rbr}{\right \}}
-%\newcommand{\ld}{\left .}
-%\newcommand{\rd}{\right .}
-\newcommand{\vd}{\vec{d}}
-\newcommand{\vR}{\vec{R}}
-\newcommand{\vr}{\vec{r}}
-\newcommand{\vk}{\vec{k}}
-\newcommand{\vl}{\vec{l}}
-\newcommand{\vp}{\vec{p}}
-\newcommand{\vP}{\vec{P}}
-\newcommand{\cM}{{\cal{M}}}
-\newcommand{\cB}{{\cal{B}}}
-\newcommand{\cV}{{\cal{V}}}
-\newcommand{\rhok}{{\rho_{\vec{k}}}}
-\newcommand{\rhomk}{{\rho_{-\vec{k}}}}
-\newcommand{\etak}{{\eta_{\vec{k}}}}
-\newcommand{\etamk}{{\eta_{-\vec{k}}}}
-\newcommand{\nuk}{{\nu_{\vec{k}}}}
-
 %\setbeamertemplate{frametitle}{\raggedright \insertframetitle \par}
 
 \title{Grand partition function}
@@ -93,23 +60,26 @@
 	\tableofcontents
 \end{frame}
 
-%\begin{frame}
-%	\vspace{2cm}
-
-%	\begin{center}
-%	    \Large{\textbf{Grand partition function in collective variables}}
-%	\end{center}
-	
-%	\vspace{2cm}
-	
-%	\begin{center}
-%	    \textbf{R.V.~Romanik}
-%	\end{center}
-%\end{frame}
-
 %--------------------Table of Content----------------------
 
 \section{Problem statement}
+
+\begin{frame}
+	\frametitle{Problem statement}
+	
+	\begin{spacing}{2}
+
+	
+	[1] Yukhnovskii I.R., Physica A, \textbf{168} (1990) \\
+	
+	[2] Yukhnovskii I.R., Idzyk I.M., Kolomiets V.A., J. Stat. Phys, \textbf{80} (1995)
+	
+	[3] Yukhnovskii I.R., Kolomiets V.A., Idzyk I.M., Cond. Matter Phys., \textbf{16} (2013)
+	
+	[4] Yukhnovskii I.R., Ukr. J. Phys. Rev., \textbf{10} (2015)
+	
+	\end{spacing}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Problem statement. Grand canonical ensemble.}
@@ -137,6 +107,9 @@
 			$U_N({\vb r}^N)$ -- the potential energy of interparticle interaction
 			
 		\column{0.45\textwidth}
+		
+		Hansen J., McDonald I., \textit{Theory of Simple Liquids} (2013)
+		
 		\end{columns}
 	\end{spacing}
 	
@@ -206,6 +179,20 @@
 			\end{equation*}
 		\end{columns}
 	\end{spacing}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Interaction potential}
+	
+	\begin{figure}[htbp]
+		\includegraphics[width=0.45\textwidth,angle=0]{potential} \hfill
+		\includegraphics[width=0.45\textwidth,angle=0]{potential-fourier} \\
+		\parbox{0.5\textwidth}{\caption*{Fig. 1. Morse potential at $R_0/\alpha = 3.5$.
+		}} \hfill
+		\parbox{0.45\textwidth}{\caption*{Fig. 2. Fourier transform of a long-range part of interaction potential. The case of Morse potential: 1 - $R_0/\alpha = 2.77,$ 2 - $R_0/\alpha = 3.0,$ 3 - $R_0/\alpha = 3.5$  
+		}}
+	\end{figure}
 	
 \end{frame}
 
@@ -363,6 +350,10 @@
 			\end{equation*}
 			
 			$\mathfrak{m}_n$ -- intensive quantity, can be interpreted as $n-$particle structure factor.
+			
+			\begin{flalign*}
+				\rho & = {\langle N \rangle_0}/{V} &
+			\end{flalign*} 
 			
 			
 			%\column{0.1\textwidth}
@@ -532,7 +523,7 @@
 	
 	%\begin{spacing}{1}
 		
-		Phil Attard, \textbf{Integral equations and closure relations for the bridge function and for the tripletcorrelation function}, J. Chem. Phys. 93 (1990); doi: 10.1063/1.459402
+		Phil Attard, J. Chem. Phys. 93 (1990); doi: 10.1063/1.459402
 		
 		%\begin{columns}
 		%	\column{0.9\textwidth}
@@ -545,7 +536,7 @@
 		
 		\hfill
 		
-		J.A.~Hernando, Exact and approximate expressions for the three-particle direct correlation function and some related functions, Phys. Rev. A, 33, (1986); doi: 10.1103/PhysRevA.33.1338
+		J.A.~Hernando, Phys. Rev. A, 33, (1986); doi: 10.1103/PhysRevA.33.1338
 		
 		\begin{figure}[htbp]
 			\includegraphics[width=0.55\textwidth,angle=0]{hernando-abstract2} \hfill
@@ -602,7 +593,7 @@
 		
 		%\begin{columns}
 		%	\column{0.9\textwidth}
-		-- Recurrence relations
+		-- Recurrence relations [Schofield, Proc. Phys. Soc., \textbf{88} (1966)]
 		
 		\begin{eqnarray*}
 			\label{recur_g}
@@ -623,9 +614,9 @@
 		-- Explicity relationship for $\hat{h}^{(4)}$ via $\hat{h}^{(3)}$:
 		\begin{eqnarray*}
 			\label{recur_h4_h3}
-			\hat{h}^{(4)}(\vb k_1, \vb k_2, 0) &=& 3\hat{h}^{(2)}(0)\hat{h}^{(3)}(\vb k_1, \vb k_2) 
+			\hat{h}^{(4)}(k, -k, 0) &=& 3\hat{h}^{(2)}(0)\hat{h}^{(3)}(k, -k) 
 			\nonumber\\
-			&+& \frac{\partial \hat{h}^{(3)}(\vb k_1, \vb k_2)} {\partial \rho} (1 + \rho\hat{h}^{(2)}(0))
+			&+& \frac{\partial \hat{h}^{(3)}(k, -k)} {\partial \rho} (1 + \rho\hat{h}^{(2)}(0))
 		\end{eqnarray*}
 		
 		
@@ -642,15 +633,15 @@
 	
 	\begin{spacing}{1}
 		
-		%\begin{columns}
-		%	\column{0.9\textwidth}
+		\begin{columns}
+			\column{0.9\textwidth}
 		
 		-- Explicit relationship for $\mathfrak{m}_{3}$ via $\mathfrak{m}_{2}$:
 		\begin{equation*}
 			\label{recur_m3_m2}
-			\mathfrak{m}_3(\vb k, -\vb k) = \mathfrak{m}_2(0) 
+			\mathfrak{m}_3(k, -k) = \mathfrak{m}_2(0) 
 			\left[
-			\mathfrak{m}_2(\vb k) + \eta\frac{\partial\mathfrak{m}_2(\vb k)}{\partial\eta}
+			\mathfrak{m}_2(k) + \eta\frac{\partial\mathfrak{m}_2(k)}{\partial\eta}
 			\right],
 		\end{equation*}
 		
@@ -674,11 +665,16 @@
 			\right]
 		\end{eqnarray*}
 		
+		-- $\eta$ is packing fraction
+		\begin{flalign*}
+			\eta & = \frac{\pi}{6} \frac{\langle N \rangle_0}{V}\sigma^3 &
+		\end{flalign*}
+		
 		
 		%	\column{0.1\textwidth}
 		
 		
-		%\end{columns}
+		\end{columns}
 	\end{spacing}
 	
 \end{frame}
@@ -698,6 +694,9 @@
 		
 		
 		-- Second cumulant $\mathfrak{m}_{2}$ is found as:
+		\begin{equation*}
+			\mathfrak{m}_2 = S(0) = kT\left(\frac{\partial \rho}{\partial P}\right)_T.
+		\end{equation*}
 		
 		\begin{equation*}
 			\frac{1}{\mathfrak{m}_2} = f(\eta) + \eta \frac{\partial f(\eta)}{\partial \eta}.
@@ -728,9 +727,9 @@
 		\begin{figure}[htbp]
 			\includegraphics[width=0.45\textwidth,angle=0]{M2_as_function_of_k_at_different_eta2} \hfill
 			\includegraphics[width=0.45\textwidth,angle=0]{M2_as_function_of_eta_at_k_equals_0} \\
-			\parbox{0.5\textwidth}{\caption*{\label{m2_vs_k} Fig. Cumulant $\mathfrak{m}_2$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
+			\parbox{0.5\textwidth}{\caption*{\label{m2_vs_k} Fig. 3. Cumulant $\mathfrak{m}_2$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
 			}} \hfill
-			\parbox{0.45\textwidth}{\caption*{\label{m2_vs_eta} Fig. Cumulant $\mathfrak{m}_2$ as a function of packing fraction $\eta$ at $\vb k = 0$
+			\parbox{0.45\textwidth}{\caption*{\label{m2_vs_eta} Fig. 4. Cumulant $\mathfrak{m}_2$ as a function of packing fraction $\eta$ at $\vb k = 0$
 			}}
 		\end{figure}
 		
@@ -753,9 +752,9 @@
 		\begin{figure}[htbp]
 			\includegraphics[width=0.45\textwidth,angle=0]{M4_as_function_of_k_at_different_eta} \hfill
 			\includegraphics[width=0.45\textwidth,angle=0]{M4_as_function_of_eta_at_k_equals_0} \\
-			\parbox{0.5\textwidth}{\caption*{\label{m4_vs_k} Fig. Cumulant $\mathfrak{m}_4$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
+			\parbox{0.5\textwidth}{\caption*{\label{m4_vs_k} Fig. 5. Cumulant $\mathfrak{m}_4$ as a function of $k\sigma$ at different values of packing fraction $\eta$. 1 - $\eta = 0.05$, 2 - $\eta=0.1$, 3 - $\eta = 0.15$, and 4 - $\eta=0.2$.
 			}} \hfill
-			\parbox{0.45\textwidth}{\caption*{\label{m4_vs_eta} Fig. Cumulant $\mathfrak{m}_4$ as a function of packing fraction $\eta$ at $\vb k = 0$
+			\parbox{0.45\textwidth}{\caption*{\label{m4_vs_eta} Fig. 6. Cumulant $\mathfrak{m}_4$ as a function of packing fraction $\eta$ at $\vb k = 0$
 			}}
 		\end{figure}
 		
@@ -810,7 +809,9 @@
 		\begin{columns}
 		\column{0.9\textwidth}
 				
-		{\it Approximation 1.} The expression for $\Xi$ is restricted to $\mathfrak{M}_4$
+		{\it Approximation 1.} The expression for $\Xi$ is restricted to $\mathfrak{M}_4$.
+		
+		$\quad \quad$ NB: $\mathfrak{m}_4 < 0$ only for $0.04 < \eta < 0.22$
 		
 		\hfill
 		
@@ -893,8 +894,8 @@
 		\begin{figure}[htbp]
 			\includegraphics[width=0.45\textwidth,angle=0]{a2_as_function_of_eta} \hfill
 			\includegraphics[width=0.45\textwidth,angle=0]{a4_as_function_of_eta} \\
-			\parbox{0.5\textwidth}{\caption*{}} \hfill
-			\parbox{0.45\textwidth}{\caption*{}}
+			\parbox{0.5\textwidth}{\caption*{Fig. 7.}} \hfill
+			\parbox{0.45\textwidth}{\caption*{Fig. 8}}
 		\end{figure}
 		
 		
@@ -943,7 +944,7 @@
 		
 		
 		
-			\column{0.1\textwidth}
+		%\column{0.1\textwidth}
 		
 		
 		\end{columns}
@@ -980,12 +981,7 @@
 				-d'(0) - \frac{a'_4}{2}{\rho'}_0^2 < 0.
 			\end{equation*}
 			
-			-- Conditions for critical point to exist
-			\begin{equation*}
-				\mu^* = 0
-			\end{equation*}
-			
-			\column{0.1\textwidth}
+			%\column{0.1\textwidth}
 			
 			
 		\end{columns}
@@ -999,7 +995,12 @@
 	\begin{spacing}{1}
 		
 		\begin{columns}
-			\column{0.5\textwidth}
+			\column{0.45\textwidth}
+			
+			-- First conditions for critical point to exist
+			\begin{equation*}
+				\mu^* = 0
+			\end{equation*}
 			
 			-- Solutions for $\rho_{\rm max}$ at $\mu^* = 0$
 			$$
@@ -1052,15 +1053,15 @@
 			
 			-- Condition $\mu^* = 0:$
 			
-			\column{0.7\textwidth}
+			\column{0.65\textwidth}
 			
-			\begin{equation*}
+			\begin{flalign*}
 				\beta(\mu - \mu_0) + \frac{\mathfrak{m}_3}{\mathfrak{m_4}} + 
 				\frac{\langle N \rangle_0}{V}\beta\hat{\Phi}_0 
 				\left(
-				1 + \frac{\mathfrak{m}_2 \mathfrak{m}_3}{\mathfrak{m}_4} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}
-				\right) = 0
-			\end{equation*}
+				1 + \frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2}
+				\right) & = 0 &
+			\end{flalign*}
 			
 			
 		\end{columns}
@@ -1070,25 +1071,25 @@
 			
 			-- Condition $d(0) = 0:$
 			
-			\column{0.7\textwidth}
+			\column{0.65\textwidth}
 			
-			\begin{equation*}
-				a'_2 + \frac{6\eta}{\pi} \frac{1}{T^*} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3} = 0
-			\end{equation*}
+			\begin{flalign*}
+				a'_2 + \frac{6\eta}{\pi} \frac{1}{T^*} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3} & = 0 &
+			\end{flalign*}
 			
 			
 		\end{columns}
 		
 		\begin{columns}
-			\column{0.35\textwidth}
+			\column{0.3\textwidth}
 			
 			-- Condition $\langle N \rangle_0 = \langle N \rangle:$
 			
-			\column{0.7\textwidth}
+			\column{0.65\textwidth}
 			
-			\begin{equation*}
-				\frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2} = 0.
-			\end{equation*}
+			\begin{flalign*}
+				\frac{\mathfrak{m}_2 \mathfrak{m}_3}{\abs{\mathfrak{m}_4}} + \frac{\mathfrak{m}_3^3}{3\mathfrak{m}_4^2} & = 0. &
+			\end{flalign*}
 			
 		\end{columns}
 		
@@ -1102,7 +1103,7 @@
 
 		
 		\begin{equation*}
-			\eta_c = 0.13044 \quad (\rho_c = 0.24913)
+			\eta_c = 0.13044 \quad (\rho^*_c = 0.24913)
 		\end{equation*}
 		\begin{equation*}
 			T^*_c = -\frac{6\eta_c}{\pi a'_2} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3}
@@ -1111,16 +1112,17 @@
 			\beta(\mu_c - \mu_0) = -\frac{\rho^*_c}{T^*_c} \frac{\hat{\Phi}_0}{\varepsilon\sigma^3} = a'_2
 		\end{equation*}
 		
-		\column{0.45\textwidth}
-		\begin{equation*}
-			{\rm{At} \quad R_0/\alpha = 3.5}
-		\end{equation*}
+		\column{0.1\textwidth}
 		
+		\column{0.35\textwidth}
+		
+		-- Notation
 		\begin{equation*}
-			T^*_c = 2.202
+			\rho^* = \frac{\langle N \rangle}{V} \sigma^3
 		\end{equation*}
+		$$ \eta = \frac{\pi}{6} \frac{\langle N \rangle}{V} \sigma^3 = \frac{\pi}{6}\rho^* $$
 		\begin{equation*}
-			\beta(\mu_c - \mu_0) = 2.5453
+			T^* = \frac{kT}{\varepsilon}
 		\end{equation*}
 		
 		\end{columns}
@@ -1169,10 +1171,21 @@
 \section{Summary}
 
 \begin{frame}
+	\frametitle{Publications}
+	
+	[1] Yukhnovskii I.R., Romanik R.V., \textit{Grand Partition Function Functional for Simple Fluids}, Journal of Physical Studies, \textbf{28}, 2 (2024) [in print]
+	
+	\hfill
+	
+	[2] Yukhnovskii I.R., Romanik R.V., \textit{Grand Partition Function Functional for Simple Fluids}, Preprint ICMP-23-01E, pp. 1-50 (2023)
+	
+\end{frame}
+
+\begin{frame}
 	\frametitle{Summary}
 	
 	\begin{itemize}
-		\item Functional form for the grand partition function is obtained with all coefficients explicitly known as functions of density, temperature and chemical potential
+		\item Functional form for the grand partition function is obtained with all coefficients explicitly known as functions of the reference-system density, temperature and chemical potential, as well as of the interaction-potential microscopic parameters.
 		
 		\hfill
 		
